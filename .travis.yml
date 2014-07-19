@@ -1,9 +1,3 @@
 language: perl
 perl:
     - "5.10"
-install:
-    - cpanm -q --notest Dist::Zilla || (cat /home/travis/.cpanm/build.log; false)
-    - dzil authordeps --missing | cpanm -q --notest || (cat /home/travis/.cpanm/build.log; false)
-    - dzil listdeps --author --missing | cpanm -q --notest || (cat /home/travis/.cpanm/build.log; false)
-script:
-    - dzil test --all
